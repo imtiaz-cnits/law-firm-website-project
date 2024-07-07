@@ -82,6 +82,35 @@ Reset Default CSS End
 /* Navbar End */
 
 /* Hero Start */
+
+.header {
+  padding: 10px 0px 10px 0px;
+}
+
+.menu-main .active {
+  border-bottom: 3px solid var(--white);
+}
+
+.menu-main a:hover::before{
+  width: 100%;
+}
+
+.menu-main a:before{
+  content: attr(data-text);
+  border-bottom: 3px solid var(--white);
+  color: var(--white);
+  white-space: nowrap;
+  width: 0%;
+  overflow: hidden;
+  padding: 10px 0;
+  transition: 0.4s;
+  position: absolute;
+  left: 0px;
+  top: -1px;
+}
+
+
+
 #contact_hero {
   background: url(../img/contact_hero_bg.svg);
   background-position: center;

@@ -15,10 +15,15 @@
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
 
+    <!-- Animation Css Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
   </head>
   <body>
     <!-- Hero Start -->
     <section id="hero">
+      
       <!-- Navbar Start -->
       <header class="navbar_wrapper sticky-top">
         <div class="topbar">
@@ -64,7 +69,7 @@
                     <li class="menu-item-has-children">
                       <a href="#">About Us</a>
                     </li>
-                    <li class="menu-item-has-children">
+                    <li class="menu-item-has-children" id="dropdown_text_underline">
                       <a href="#">Expertise<i class="fa fa-angle-down"></i></a>
                       <div class="sub-menu mega-menu mega-menu-column-4">
                         <div class="list-item">
@@ -93,7 +98,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="menu-item-has-children">
+                    <li class="menu-item-has-children" id="dropdown_text_underline">
                       <a href="#">Industries<i class="fa fa-angle-down"></i></a>
                       <div class="sub-menu mega-menu mega-menu-column-4">
                         <div class="list-item">
@@ -123,7 +128,7 @@
                       </div>
                     </li>
 
-                    <li class="menu-item-has-children">
+                    <li class="menu-item-has-children" id="dropdown_text_underline">
                       <a href="#">Lawyers<i class="fa fa-angle-down"></i></a>
                       <div
                         class="sub-menu mega-menu mega-menu-column-4 menu-item-has-childrens"
@@ -175,7 +180,7 @@
               </div>
             </div>
           </div>
-          <div class="hero_section_text">
+          <div class="hero_section_text wow animate__animated animate__fadeInUp" data-wow-duration="1.8s" data-wow-delay="1s">
             <h1><b>Commercial & Corporate<br>
               <span class="hero_text">Law Firm</span> in London</b></h1>
           </div>
@@ -184,7 +189,6 @@
       <!-- Navbar End -->
     </section>
     <!-- Hero End -->
-
     <!-- Contact Start -->
     <section id="contact">
       <div class="container">
@@ -247,7 +251,7 @@
     <!-- Contact End -->
 
     <!-- Services Start -->
-    <section id="services">
+    <!-- <section id="services">
       <div class="container">
         <div class="services_wrapper">
           <div class="row">
@@ -350,7 +354,116 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+    
+    <!-- Services Start -->
+<section id="services">
+  <div class="container">
+    <div class="services_wrapper">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+          <a href="#">
+            <div class="services_content">
+              <div class="services_content_img">
+                <img src="./assets/img/services_01.svg" alt="" />
+              </div>
+              <div class="services_content_heading">
+                <h1>Corporate & Commercial Law</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+          <a href="#">
+            <div class="services_content">
+              <div class="services_content_img">
+                <img src="./assets/img/services_02.svg" alt="" />
+              </div>
+              <div class="services_content_heading">
+                <h1>Business Formation & Restructuring</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+          <a href="#">
+            <div class="services_content">
+              <div class="services_content_img">
+                <img src="./assets/img/services_03.svg" alt="" />
+              </div>
+              <div class="services_content_heading">
+                <h1>Tax Law</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+          <a href="#">
+            <div class="services_content">
+              <div class="services_content_img">
+                <img src="./assets/img/services_04.svg" alt="" />
+              </div>
+              <div class="services_content_heading">
+                <h1>IT Cyber Laws</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+          <a href="#">
+            <div class="services_content">
+              <div class="services_content_img">
+                <img src="./assets/img/services_05.svg" alt="" />
+              </div>
+              <div class="services_content_heading">
+                <h1>Residential & Commercial Landlord & Tenant Law</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+          <a href="#">
+            <div class="services_content">
+              <div class="services_content_img">
+                <img src="./assets/img/services_06.svg" alt="" />
+              </div>
+              <div class="services_content_heading">
+                <h1>Mergers & Acquisitions Services</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+          <a href="#">
+            <div class="services_content">
+              <div class="services_content_img">
+                <img src="./assets/img/services_07.svg" alt="" />
+              </div>
+              <div class="services_content_heading">
+                <h1>International Trade Law</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6 wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
+          <a href="#">
+            <div class="services_content">
+              <div class="services_content_img">
+                <img src="./assets/img/services_08.svg" alt="" />
+              </div>
+              <div class="services_content_heading">
+                <h1>Employment Law</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Services End -->
+
+    
     <!-- Services End -->
 
     <!-- About Start -->
@@ -385,7 +498,7 @@
                 record is punctuated with proven success stories, a testament to
                 our dedication to achieving favorable legal outcomes. With us,
                 you don't just get legal services in London; you get a trusted
-                partner committed to your success
+                partner committed to your success.
               </p>
             </div>
           </div>
@@ -761,5 +874,10 @@
     <script src="./assets/js/fontawesome.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/navbar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+
   </body>
 </html>

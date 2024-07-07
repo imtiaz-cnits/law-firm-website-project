@@ -67,7 +67,7 @@ label {
 
 /* Hero Start */
 #hero {
-  background: url(../img/hero_bg.svg);
+  background: url(..//img/hero_bg.svg);
   width: 100%;
   height: 100vh;
   background-position: center;
@@ -157,7 +157,6 @@ label {
   width: 100%;
   position: relative;
   z-index: 99;
-  padding: 15px;
 }
 .header .item-left {
   flex: 0 0 15% !important;
@@ -227,8 +226,14 @@ label {
   opacity: 0;
   visibility: hidden;
 }
+
 .menu-item-has-children i {
-  padding: 0px 5px;
+  padding: 0px 4px;
+}
+
+.menu-item-has-children:hover i {
+  transform: rotate(180deg);
+  transition: all 0.7s ease;
 }
 
 @media (max-width: 1202px) {
@@ -345,11 +350,11 @@ label {
 
 .header .menu .menu-main {
   height: 100%;
-
   display: flex;
   justify-content: space-between !important;
   align-items: center !important;
 }
+
 
 /*responsive*/
 @media (max-width: 1001px) {
@@ -598,9 +603,31 @@ label {
 }
 
 .menu-main .active {
-  border-bottom: 2px solid var(--white);
-  padding-top: 3px;
+  border-bottom: 3px solid var(--white);
 }
+
+.menu-main a:hover::before{
+  width: 100%;
+}
+
+.menu-main a:before{
+  content: attr(data-text);
+  border-bottom: 3px solid var(--white);
+  color: var(--white);
+  white-space: nowrap;
+  width: 0%;
+  overflow: hidden;
+  padding: 10px 0;
+  transition: 0.5s;
+  position: absolute;
+  left: 0px;
+  top: -1px;
+}
+
+#dropdown_text_underline a::before {
+  border-bottom: none !important;
+}
+
 .hero_section_text h1{
   font-size: 65px;
   padding: 150px 0px;
@@ -728,7 +755,7 @@ label {
   border: 1px solid var(--primary-color) !important;
   background: none !important;
   color: var(--primary-color) !important;
-  transition: 0.5s ease !important;
+  transition:all 0.7s ease !important;
 }
 
 .contact_content {
@@ -773,7 +800,7 @@ label {
   border: 1px solid var(--primary-color) !important;
   background: none !important;
   color: var(--primary-color) !important;
-  transition: 0.25s ease !important;
+  transition:all 0.25s ease-in-out !important;
 }
 
 @media screen and (max-width: 1150px) {
@@ -815,7 +842,6 @@ label {
 
 .services_content {
   margin-top: 30px;
-  border: 1px solid var(--white);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -823,12 +849,18 @@ label {
 .services_content_img img {
   width: 100%;
   height: 100%;
+  overflow: hidden !important;
 }
 
 .services_content_img:hover img{
   transform: scale(1.1);
-  transition: 1s;
-  overflow: hidden;
+  overflow: hidden !important;
+  border-bottom-left-radius: 6px !important;
+  transition: all 1s ease-in-out !important;
+}
+
+.services_content:hover{
+  border-radius: 6px !important;
 }
 
 .services_content_heading h1 {
@@ -865,34 +897,41 @@ label {
   height: 500px;
   object-fit: cover;
   object-position: center;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+  padding: 0px 0px 0px 7px;
 }
 
 .about_content_img {
   margin-top: -550px;
-  padding-bottom: 30px;
+  padding-top: 18px;
+  padding-bottom: 20px;
 }
 
 .about_content h1 {
   font-size: 26px;
   color: var(--white);
   /* margin-top: 50px; */
+  padding: 0px 0px 0px 52px;
 }
+
 .about_content {
   /* margin-top: 60px; */
-  padding: 50px 0 40px 0;
+  padding: 45px 0 50px 0;
 }
 
 .about_content h5 {
   font-size: 16px;
   color: var(--white);
+  padding: 0px 0px 0px 52px;
 }
 
 .about_content p {
   font-size: 15px;
   color: var(--white);
   margin-top: 20px;
+  text-align: justify !important;
+  padding: 0px 0px 0px 52px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -902,6 +941,18 @@ label {
 
   .about_content {
     margin-bottom: 0px;
+  }
+
+  .about_content h1{
+    padding-left: 0px;
+  }
+
+  .about_content h5{
+    padding-left: 0px;
+  }
+
+  .about_content p{
+    padding-left: 0px;
   }
 
   .about_content_img {
@@ -1061,6 +1112,11 @@ label {
 .testimonial_content_btn a:hover {
   background: var(--primary-color);
   color: var(--white);
+}
+
+.animate__fadeInUp {
+  animation-duration: 2s; /* Adjust the duration for a slower effect */
+  animation-delay: 1s; /* Adjust the delay to start the animation later */
 }
 
 /* Testimonial End */
