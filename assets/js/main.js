@@ -1,59 +1,57 @@
+var words = document.getElementsByClassName('word');
+var wordArray = [];
+var currentWord = 0;
 
-const menu = document.querySelector(".menu");
-const menuMain = menu.querySelector(".menu-main");
-const goBack = menu.querySelector(".go-back");
-const menuTrigger = document.querySelector(".mobile-menu-trigger");
-const closeMenu = menu.querySelector(".mobile-menu-close");
-let subMenu;
-menuMain.addEventListener("click", (e) =>{
-    if(!menu.classList.contains("active")){
-        return;
-    }
-  if(e.target.closest(".menu-item-has-children")){
-       const hasChildren = e.target.closest(".menu-item-has-children");
-     showSubMenu(hasChildren);
+words[currentWord].style.opacity = 1;
+for (var i = 0; i < words.length; i++) {
+  splitLetters(words[i]);
+}
+
+function changeWord() {
+  var cw = wordArray[currentWord];
+  var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
+  for (var i = 0; i < cw.length; i++) {
+    animateLetterOut(cw, i);
   }
-});
-goBack.addEventListener("click",() =>{
-     hideSubMenu();
-})
-menuTrigger.addEventListener("click",() =>{
-     toggleMenu();
-})
-closeMenu.addEventListener("click",() =>{
-     toggleMenu();
-})
-document.querySelector(".menu-overlay").addEventListener("click",() =>{
-    toggleMenu();
-})
-function toggleMenu(){
-    menu.classList.toggle("active");
-    document.querySelector(".menu-overlay").classList.toggle("active");
-}
-function showSubMenu(hasChildren){
-   subMenu = hasChildren.querySelector(".sub-menu");
-   subMenu.classList.add("active");
-   subMenu.style.animation = "slideLeft 0.5s ease forwards";
-   const menuTitle = hasChildren.querySelector("i").parentNode.childNodes[0].textContent;
-   menu.querySelector(".current-menu-title").innerHTML=menuTitle;
-   menu.querySelector(".mobile-menu-head").classList.add("active");
+  
+  for (var i = 0; i < nw.length; i++) {
+    nw[i].className = 'letter behind';
+    nw[0].parentElement.style.opacity = 1;
+    animateLetterIn(nw, i);
+  }
+  
+  currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
 }
 
-function  hideSubMenu(){  
-   subMenu.style.animation = "slideRight 0.5s ease forwards";
-   setTimeout(() =>{
-      subMenu.classList.remove("active");	
-   },300); 
-   menu.querySelector(".current-menu-title").innerHTML="";
-   menu.querySelector(".mobile-menu-head").classList.remove("active");
+function animateLetterOut(cw, i) {
+  setTimeout(function() {
+		cw[i].className = 'letter out';
+  }, i*80);
 }
 
-window.onresize = function(){
-    if(this.innerWidth >991){
-        if(menu.classList.contains("active")){
-            toggleMenu();
-        }
-
-    }
+function animateLetterIn(nw, i) {
+  setTimeout(function() {
+		nw[i].className = 'letter in';
+  }, 340+(i*80));
 }
+
+function splitLetters(word) {
+  var content = word.innerHTML;
+  word.innerHTML = '';
+  var letters = [];
+  for (var i = 0; i < content.length; i++) {
+    var letter = document.createElement('span');
+    letter.className = 'letter';
+    letter.innerHTML = content.charAt(i);
+    word.appendChild(letter);
+    letters.push(letter);
+  }
+  
+  wordArray.push(letters);
+}
+
+changeWord();
+setInterval(changeWord, 4000);
+
+
 
